@@ -1,0 +1,15 @@
+.container{
+    max-width: 1380px;
+    margin-inline: auto;
+}
+
+button{
+    background-color:brown;
+    padding: 10px 50px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    outline: none;
+    border: none;
+}
+

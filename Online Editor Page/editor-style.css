@@ -1,0 +1,310 @@
+/* by defult classes*/
+
+.CodeMirror-linenumber, .CodeMirror-scroll, .CodeMirror-sizer {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    font-size: 20px;
+}
+.cm-s-monokai .CodeMirror {
+    background: #2846ed;
+    color: #232301;
+}
+
+/* Codingburn Css Code */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    background-color: #0f172a;
+}
+:root{
+   --accent-color:#0556f3;
+   --accent-color-dark:#074ad1;
+   --primary-text-color:#fff;
+   --primary-text-color-dark:#0a0a0a;
+   --inline-padding:10px 20px 10px 20px;
+}
+h1{
+    font-size: 3rem;
+}
+h2{
+    font-size: 2.4rem;
+}
+h3{
+    font-size: 1.6rem;
+}
+h4{
+    color: var(--primary-text-color);
+}
+p{
+    font-size: 1.1rem;
+}
+span{
+    font-size: 1.1rem;
+}
+a, li{
+    text-decoration: none;
+    list-style: none;
+    color: var(--primary-text-color);
+    font-size: 17px;
+    transition: .3s ease-in-out;
+    font-family: 'Poppins',sans-serif;
+}
+li :hover{
+    color:#e1dcdc;
+    transform: scale(1.1rem);
+}
+i{
+    align-items: center;
+    margin-left: 5px;
+}
+/* Utility Classes */
+.container{
+    max-width: 1380px;
+    padding: var(--inline-padding);
+    margin-inline: auto;
+}
+.flex{
+    display: flex;
+    align-items: center;
+}
+.area-box{
+    width: 50%;
+    /* background-color: #ed9797; */
+    /* border: 1px solid var(--primary-text-color-dark); */
+}   
+.lower-area{
+    height: calc(60vh - 8vh);
+    /* background-color: red; */
+}
+.logo{
+    height: 40px;
+}
+.btn{
+    height: 30px;
+    width: 70px;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: rgba(233, 30, 99, 1);
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    color: #fff;
+}
+.btn:hover{
+    background-color: rgb(214, 36, 95);
+    cursor: pointer;
+}
+#save-button{
+    background-color: #0556f3;
+}
+#load-button{
+    background-color: #f37405;
+}
+.primary-button{
+    background-color: var(--accent-color);
+    color: var(--primary-text-color);
+}
+.primary-button:hover{
+   background-color: #084acf;
+   color: var(--primary-text-color);
+   
+}
+.sub-title{
+    font-size: 23px;
+    letter-spacing: .2em;
+    color: transparent; /* Set text color to transparent */
+    padding: 0;
+    background-image: linear-gradient(114.94deg, #a091ff 9.66%, #52b9ff 87.27%);
+    -webkit-background-clip: text; /* Clip background to text */
+    background-clip: text;  
+}
+.title{
+    font-size: 3rem;
+    color: var(--primary-text-color);
+    padding: 0;
+    width: 100%;
+    line-height: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+}
+/* Style for highlighted line */
+.CodeMirror-activeline-background {
+    background-color: #f0f0f0; /* Adjust as needed */
+}
+
+/* code editor section */
+.codingburn{
+    width: 100vw;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+
+    /* background-color: #0556f3; */
+}
+header{
+    overflow: hidden;
+}
+.codingburn .codingburn-header {
+    width: 100%;
+    height: 80px;
+    background-color: #0d1118;
+}
+.codingburn .codingburn-header .main-nav{
+    height: 80px;
+    width: 100%;
+    padding: 0;
+    align-items: center;
+}
+.codingburn .codingburn-header .main-nav .logo-container{
+    height: 80px;
+    align-items: center;
+    padding-top: 5px;
+}
+.codingburn .codingburn-header .main-nav  
+.logo-container a .logo{
+    height: 50px;
+}
+
+.codingburn .codingburn-header .main-nav
+.middle-container{
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+.codingburn .codingburn-header .main-nav
+.menu-ul{
+    gap: 29px;
+    font-size: 14px;
+    color: var(--primary-text-color);
+}
+
+.codingburn .codingburn-header .main-nav
+.right-container{
+    width: 30%;
+}
+.codingburn .codingburn-header .main-nav
+.right-container .menu-ul{
+    width: 100%;
+    justify-content: flex-end;
+}
+.codingburn .codingburn-header .main-nav
+.right-container .menu-ul .sign-in{
+    padding: 10px 15px 10px 15px;
+    border-radius: 20px;
+    align-items: center;
+}
+.codingburn .codingburn-main {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.ads-section{
+    width: 100%;
+    height: auto;
+}
+
+
+.codingburn .codingburn-main .code-editor-section {
+    height: 470px;
+    width: 90%;
+    background-color: #3c3c49;
+    padding: 5px; /* Add padding */
+    border-radius: 10px;
+    gap: 10px;
+    margin-top: 7px;
+    margin-bottom: 30px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Add 3D shadow effect */
+}
+
+
+.codingburn .codingburn-main 
+.code-editor-section .input-area{
+    height: 470px;
+    width: 70%;
+}
+.codingburn .codingburn-main 
+.code-editor-section .input-area .upper-area{
+    height: 14%;
+    justify-content: space-between;
+    gap: 10px;
+    padding-left: 49px;
+}
+.codingburn .codingburn-main 
+.code-editor-section .input-area .lower-area{
+    height: 86%;
+    /* background-color: #0556f3; */
+}
+
+.CodeMirror{
+    height: 100%;
+}
+.cm-s-monokai.CodeMirror {
+    background: #0e1526;
+}
+.CodeMirror-gutter{
+    background-color:#3c3c49;
+}
+.codingburn .codingburn-main 
+.code-editor-section .output-area{
+    height: 470px;
+    width: 30%;
+    overflow: hidden;
+}
+.codingburn .codingburn-main 
+.code-editor-section .output-area .upper-area{
+    height: 14%;
+    justify-content: flex-end;
+}
+.codingburn .codingburn-main 
+.code-editor-section .output-area .lower-area{
+    height: 86%;
+    background-color: #0e1526;
+    color: #fff;
+}
+.codingburn .codingburn-main 
+.code-editor-section .output-area .lower-area
+.output, .out-heading{
+   padding: 10px;
+}
+
+.input-output-area-resizer {
+    width: 5px;
+    height: 65px;
+    cursor: ew-resize;
+    background: #a19f9f;
+    border-radius: 10px;
+}
+.code-deitor-section-resizer-horizontal{
+    width: 5px;
+    height: 65px;
+    cursor: ew-resize;
+    background: #a19f9f;
+    border-radius: 10px;
+}
+.resizer{
+    width: 100%;
+    justify-content:center;
+    padding: 10px 0 10px 0;
+}
+.code-deitor-section-resizer-vertical{
+    width: 65px;
+    height: 5px;
+    cursor: ns-resize;
+    background: #a19f9f;
+    border-radius: 10px;
+}
+
+
+
+/* space */
+.space{
+    height: 500px;
+    background-color: whitesmoke;
+}
