@@ -143,7 +143,6 @@ i{
     letter-spacing: .1rem;
     font-weight: 700;
     text-align: center;
-    font-family: Helvetica, sans-serif
 }
 /* Style for highlighted line */
 .CodeMirror-activeline-background {
