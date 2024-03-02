@@ -1,15 +1,3 @@
-/* by defult classes*/
-
-.CodeMirror-linenumber, .CodeMirror-scroll, .CodeMirror-sizer {
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    font-size: 20px;
-}
-.cm-s-monokai .CodeMirror {
-    background: #2846ed;
-    color: #232301;
-}
-
 /* Codingburn Css Code */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
@@ -18,23 +6,34 @@ body{
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    overflow-x: hidden;
+    /* Hide scrollbar for webkit browsers (Chrome, Safari) */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For IE and Edge */
     /* background-color: #0f172a; */
 }
-body::-webkit-scrollbar{
-    display: none;
-}
+
 :root{
    --accent-color:#0556f3;
    --accent-color-dark:#074ad1;
    --primary-text-color:#fff;
    --primary-text-color-dark:#0a0a0a;
+   --mc1:#353537;
+   --mc2:#acacae;
+   --mc3: #0e1526;
+   --mc4:#0d141f;
+   --mc5:#07e092;
+   --mc6:#152038;  
+   --mc7:#50ff1f;
    --inline-padding:10px 20px 10px 20px;
 }
 h1{
-    font-size: 3rem;
+    font-size: 7rem;
 }
 h2{
     font-size: 2.4rem;
+    margin: 0;
 }
 h3{
     font-size: 1.6rem;
@@ -53,7 +52,7 @@ a, li{
     text-decoration: none;
     list-style: none;
     color: var(--primary-text-color);
-    font-size: 17px;
+    font-size: 16px;
     transition: .3s ease-in-out;
     font-family: 'Poppins',sans-serif;
 }
@@ -65,9 +64,29 @@ i{
     align-items: center;
     margin-left: 5px;
 }
+section{
+    width: 100%;
+    /* background-color: red; */
+    color: var(--primary-text-color);
+    text-align: center;
+}
+.icon{
+    height: 20px;
+}
+.box{
+    width: 50%;
+    border: 1.5px solid var(--primary-text-color);
+    border-radius: 10px;
+}
+.box-area{
+    flex-direction: row;
+    /* background-color: red; */
+    padding-left: 10PX;
+    gap: 17px;
+}
 /* Utility Classes */
 .container{
-    max-width: 1360px;
+    max-width: 1180px;
     padding: var(--inline-padding);
     margin-inline: auto;
 }
@@ -99,11 +118,18 @@ i{
     color: #fff;
 }
 .btn:hover{
-    background-color: rgb(214, 36, 95);
+    background-color: rgb(208, 18, 81);
     cursor: pointer;
 }
 #save-button{
     background-color: #0556f3;
+    transition: .2s ease-in-out;
+}
+#save-button:hover{
+    border: 1px solid var(--accent-color);
+    background-color:var(--primary-text-color);
+    color: var(--accent-color);
+    /* transform: scale(1.1); */
 }
 #load-button{
     background-color: #f37405;
@@ -112,6 +138,7 @@ i{
     background-color: var(--accent-color);
     color: var(--primary-text-color);
     transition: .3s ease-in-out;
+    font-weight: 500;
 }
 .primary-button:hover{
    background-color: #084acf;
@@ -119,50 +146,123 @@ i{
    transition: .3s ease-in-out;
 }
 .secondry-button{
-    border: 1px solid #fff;
+    border: 1px solid var(--accent-color);
+    background-color: var(--mc3);
     transition: .3s ease-in-out;
 }
 .secondry-button:hover{
-    border: 1px solid #fffb00;
+    background-color: var(--primary-text-color);
     transition: .3s ease-in-out;
+    color: var(--accent-color);
 }
 .sub-title{
     font-size: 23px;
-    letter-spacing: .2em;
     padding: 0;
-    color: transparent; /* Set text color to transparent */
-    background-image: linear-gradient(114.94deg, #a091ff 9.66%, #52b9ff 87.27%);
-   -webkit-background-clip: text;
+    color: var(--primary-text-color); /* Set text color to transparent */
+    /* background-image: linear-gradient(114.94deg, #a091ff 9.66%, #52b9ff 87.27%);
+   -webkit-background-clip: text; */
+   font-family: 'Poppins';
+   font-weight: 500;
 }
 .title{
-    font-size: 3rem;
+    font-size: 3.4rem;
     color: var(--primary-text-color);
     padding: 0;
-    width: 100%;
-    line-height: 1.9rem;
+    width: 100%;    
     letter-spacing: .1rem;
     font-weight: 700;
     text-align: center;
+    margin-top: -1.2rem;
+}
+
+/* ::-webkit-scrollbar {
+    height: 1px; Adjust the height to change scrollbar height
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--mc1);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--mc2);
+} */
+.highlight{
+    color: var(--mc5);
+    font-size: 2.4rem;
+}
+.roadmap-box{
+    width: calc(33.3% - 10px); /* Set width for each item (25% of container width minus the gap) */
+    height: 90px;
+    background-color: var(--mc6);
+    margin-bottom: 15px; /* Add margin at the bottom for gap */
+    flex-shrink: 0; /* Prevent items from shrinking */
+    box-sizing: border-box; /* Include padding and border in the width */
+    text-align: center;
+    border-radius: .6rem;
+    transition: .5s ease-in;
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 5px;
+    justify-content: center;
+}
+.roadmap-box:hover{
+   border: 1px solid var(--mc2);
+   transition: .5s ease-out;
+}
+.roadmap-box a{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.text{
+    width: 85%;
+    /* background-color: red; */
+    text-align: left;
+    padding-left: 20px;
+}
+.text a{
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+.save-div{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    /* background-color: #0556f3; */
+    text-align: center;
+}
+.save-div .material-symbols-outlined{
+    font-weight: 100;
 }
 /* Style for highlighted line */
 .CodeMirror-activeline-background {
     background-color: #f0f0f0; /* Adjust as needed */
 }
-
+.CodeMirror-linenumber, .CodeMirror-scroll, .CodeMirror-sizer {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    font-size: 20px;
+}
+.cm-s-monokai .CodeMirror {
+    background: #2846ed;
+    color: #232301;
+}
 /* code editor section */
 .codingburn{
     width: 100vw;
     height: auto;
     flex-direction: column;
     justify-content: space-between;
-    gap: 10px;
-    background-color: #0e1526;
+    gap: 50px;
+    background-color:var(--mc3);
 }
-
 .codingburn .codingburn-header {
     width: 100vw;
     height: 80px;
-    background-color: #0d1118;
+    background-color: var(--mc4);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 5;
 }
 .codingburn .codingburn-header .main-nav{
     height: 80px;
@@ -220,15 +320,14 @@ i{
     flex-direction: column;
     gap: 10px;
     position: relative;
-    overflow: hidden;
+    padding: 50px;
+    
 }
 
 .ads-section{
     width: 100%;
     height: auto;
 }
-
-
 .codingburn .codingburn-main .code-editor-section {
     height: 470px;
     width: 90%;
@@ -240,8 +339,6 @@ i{
     margin-bottom: 30px;
     box-shadow: 0px 10px 15px -3px rgba(4, 63, 255, 0.1); /* Add 3D shadow effect */
 }
-
-
 .codingburn .codingburn-main 
 .code-editor-section .input-area{
     height: 470px;
@@ -259,7 +356,6 @@ i{
     height: 86%;
     /* background-color: #0556f3; */
 }
-
 .CodeMirror{
     height: 100%;
 }
@@ -317,6 +413,25 @@ i{
     cursor: ns-resize;
     background: #a19f9f;
     border-radius: 10px;
+}
+
+
+/* Section css code */
+.section1{
+    background-color: var(--mc4);
+    padding: 50px;
+}
+.section1 .inside-section{
+    flex-direction: column;
+    gap: 3rem;
+}
+.roadmap-container{
+    width: 100%;
+    /* background-color: red; */
+    justify-content: space-between; /* Distribute items along the main axis */
+    gap: 1px;
+    align-items: center; /* Center items along the cross axis */
+    flex-wrap: wrap;
 }
 
 
