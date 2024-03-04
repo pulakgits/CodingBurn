@@ -190,49 +190,7 @@ section{
     color: var(--mc5);
     font-size: 2.4rem;
 }
-.roadmap-box{
-    width: calc(33.3% - 10px); /* Set width for each item (25% of container width minus the gap) */
-    height: 90px;
-    background-color: var(--mc6);
-    margin-bottom: 15px; /* Add margin at the bottom for gap */
-    flex-shrink: 0; /* Prevent items from shrinking */
-    box-sizing: border-box; /* Include padding and border in the width */
-    text-align: center;
-    border-radius: .6rem;
-    transition: .5s ease-in;
-    cursor: pointer;
-    padding-left: 5px;
-    padding-right: 5px;
-    justify-content: center;
-}
-.roadmap-box:hover{
-   border: 1px solid var(--mc2);
-   transition: .5s ease-out;
-}
-.roadmap-box a{
-    font-size: 1.3rem;
-    font-weight: 500;
-}
-.text{
-    width: 85%;
-    /* background-color: red; */
-    text-align: left;
-    padding-left: 20px;
-}
-.text a{
-    font-weight: 500;
-    font-size: 1.3rem;
-}
-.save-div{
-    width: 15%;
-    display: flex;
-    justify-content: center;
-    /* background-color: #0556f3; */
-    text-align: center;
-}
-.save-div .material-symbols-outlined{
-    font-weight: 100;
-}
+
 /* Style for highlighted line */
 .CodeMirror-activeline-background {
     background-color: #f0f0f0; /* Adjust as needed */
@@ -425,16 +383,60 @@ section{
     flex-direction: column;
     gap: 3rem;
 }
-.roadmap-container{
+.roadmap-container {
     width: 100%;
-    /* background-color: red; */
-    justify-content: space-between; /* Distribute items along the main axis */
-    gap: 1px;
-    align-items: center; /* Center items along the cross axis */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    flex: 1 1 auto; /* flex-grow, flex-shrink, flex-basis */
     flex-wrap: wrap;
 }
 
+.roadmap-box {
+    width: calc(33.33% - 10px); /* Set width for each item (33.33% of container width minus the gap) */
+    height: 90px;
+    margin-bottom: 15px; /* Add margin at the bottom for gap */
+    padding: 0 5px; /* Shorter notation for padding-left and padding-right */
+    background-color: var(--mc6);
+    border-radius: .6rem;
+    text-align: center;
+    justify-content: center;
+    flex-shrink: 0; /* Prevent items from shrinking */
+    box-sizing: border-box; /* Include padding and border in the width */
+    cursor: pointer;
+    transition: .5s ease-in;
+}
 
+
+.roadmap-box:hover{
+   border: 1px solid var(--mc2);
+   transition: .5s ease-out;
+}
+.roadmap-box a{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+.text{
+    width: 85%;
+    /* background-color: red; */
+    text-align: left;
+    padding-left: 20px;
+}
+.text a{
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+.save-div{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    /* background-color: #0556f3; */
+    text-align: center;
+}
+.save-div .material-symbols-outlined{
+    font-weight: 100;
+}
 
 /* space */
 .space{
