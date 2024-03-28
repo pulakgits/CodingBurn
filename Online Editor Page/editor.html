@@ -59,67 +59,172 @@
             </nav>
         </header>
 
-        <main class="codingburn-main flex container">
-            <div class="title">
-                <h1 class="title">
-                    Powerful JavaScript Code Editor <br>at Your Fingertips
-                </h1>
-                <p class="sub-title"> With our online JavaScript Code editor, 
-you can write,run <br> JavaScript code, and view the result in your browser.
-                </p>   
-            </div>
-            <div class="code-editor-section flex ">
-                <div class="input-area area-box">
-                    <div class="upper-area flex">
-                        <div class="line1">
-                            <h4>JavaScript Code Editor</h4>
+        <main class="main flex" id="main">
+            <div class="codingburn-main flex container">
+                <div class="text-section">
+                    <h1 class="title">
+                        JavaScript Code Editor Online Free
+                    </h1>
+                    <p class="sub-title"> With our online JavaScript Code editor, 
+                        you can write,run <br> JavaScript code, and view the result in your browser.
+                    </p>   
+                </div>
+
+                <div class="code-editor-section container">
+                    <div class="code-editor-box flex">
+                        <div class="input-area area-box">
+                            <div class="upper-area flex">
+                                <div class="line1">
+                                    <h4>JavaScript Code Editor</h4>
+                                </div>
+                                <div class="line2 flex">
+                                    <button id="run-button" class="btn">
+                                        Run
+                                        <i class="fa-solid fa-play"></i>
+                                    </button>
+                                    <button id="save-button" class="btn">Save</button>
+                                    <button id="copy-button" class=" copy-button btn flex">
+                                        <span class="material-symbols-outlined">
+                                            content_copy
+                                        </span>
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="lower-area">
+                                <textarea id="code-editor">// Write your JavaScript code here</textarea>
+                            </div>  
+                            <!-- <div class="resizer flex">
+                                <div class="code-deitor-section-resizer-vertical">
+                                </div> 
+                            </div>   -->
+                            
                         </div>
-                        <div class="line2">
-                            <button id="run-button" class="btn">
-                                Run
-                                <i class="fa-solid fa-play"></i>
-                            </button>
-                            <button id="save-button" class="btn">Save</button>
-                        </div>
-                    </div>
-                    <div class="lower-area">
-                        <textarea id="code-editor">// Write your JavaScript code here</textarea>
-                    </div>  
-                    <!-- <div class="resizer flex">
-                        <div class="code-deitor-section-resizer-vertical">
+                        <div class="input-output-area-resizer">
                         </div> 
-                    </div>   -->
-                    
-                </div>
-                <div class="input-output-area-resizer">
-                </div> 
-                <div class="output-area area-box">
-                    <div class="upper-area flex">
-                        <button id="load-button" class="btn">Load</button>
-                    </div>
-                    <div class="lower-area">
-                        <div class="out-heading">
-                            Output: 
+                        <div class="output-area area-box">
+                            <div class="upper-area flex">
+                                <button id="load-button" class="btn">Load</button>
+                            </div>
+                            <div class="lower-area">
+                                <div class="out-heading">
+                                    Output: 
+                                </div>
+                                <div id="output" class="output">
+                                    Click on RUN button to see the output  
+                                </div>
+                            </div>
                         </div>
-                        <div id="output" class="output" contenteditable="true">
-                            Click on RUN button to see the output  
+                        <div class="input-output-area-resizer output-area-right-resizer">
                         </div>
                     </div>
-                </div>
-                <div class="code-deitor-section-resizer-horizontal">
                 </div>
             </div>
+            <section class="section section1">
+                <div class="title">
+                    <h2>Practice this <span class="most-imt-txt">Javascript</span> Program</h2>
+                </div>
+                <div class="inside-section flex container">
+                    <div class="h3-wrap">
+                        <span class="absolute-title"><a href="">Palindrome</a></span>
+                        <button id="absolute-copy-button" class=" flex absolute-copy-button">
+                            <span id="copy-icon" class="material-symbols-outlined copy-icon">content_copy</span>
+                        </button>
+                        <div class="absolute-section">
+                            <pre><div class="dark bg-gray-950 rounded-md"><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript">  
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">isPalindrome</span>(str) {
+    <span class="hljs-comment">// Remove non-alphanumeric characters and convert to lowercase</span>
+    <span class="hljs-keyword">const</span> cleanedStr = str.<span class="hljs-title function_">replace</span>(<span class="hljs-string">/[^a-zA-Z0-9]/g</span>,<span class="hljs-string"> ''</span> ).<span class="hljs-keyword">toLowerCase</span>();
 
-        
-            <div class="ads-section ">
-            </div>  
-            
+    <span class="hljs-comment">// Compare the original string with its reversed version</span>
+    <span class="hljs-keyword">return</span> cleanedStr === cleanedStr.<span class="hljs-title function_">split</span>(<span class="hljs-string">''</span>,<span class="hljs-string"> ''</span> ).<span class="hljs-keyword">reverse</span>().<span class="hljs-keyword">join</span>(<span class="hljs-keyword">''</span>);
+                                                                        
+<span class="hljs-comment">// Test the function</span>
+<span class="hljs-keyword">const</span> testString1 = <span class="hljs-string">"A man, a plan, a canal, Panama!"</span>;
+<span class="hljs-keyword">const</span> testString1 = <span class="hljs-string">"racecar"</span>;
+<span class="hljs-keyword">const</span> testString1 = <span class="hljs-string">"hello"</span>;
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isPalindrome</span>(testString1)); <span class="hljs-comment">// Output: true</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isPalindrome</span>(testString2)); <span class="hljs-comment">// Output: true</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">isPalindrome</span>(testString3)); <span class="hljs-comment">// Output: false</span>
+                                </code></div></div></pre>
+                        </div>
+                    </div>
+                    <div class="h3-wrap">
+                        <span class="absolute-title"><a href="">Console</a></span>
+                        <button id="absolute-copy-button" class=" flex absolute-copy-button">
+                            <span id="copy-icon" class="material-symbols-outlined copy-icon">content_copy</span>
+                        </button>
+                        <div class="absolute-section">
+                            <pre><div class="dark bg-gray-950 rounded-md"><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript">
+<span class="hljs-comment">// Define a variable</span>
+<span class="hljs-keyword">var</span> x = <span class="hljs-number">5</span>;
+                                                                        
+<span class="hljs-comment">// Perform a mathematical operation</span>
+<span class="hljs-keyword">var</span> result = x * <span class="hljs-number">2</span>;
+                                                                        
+<span class="hljs-comment">// Display the result</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"The result is: "</span> + result);
+                                </code></div></div></pre>
+                        </div>
+                    </div>
+                    <div class="h3-wrap">
+                        <span class="absolute-title"><a href="">Console</a></span>
+                        <button id="absolute-copy-button" class=" flex absolute-copy-button">
+                            <span id="copy-icon" class="material-symbols-outlined copy-icon">content_copy</span>
+                        </button>
+                        <div class="absolute-section">
+                            <pre><div class="dark bg-gray-950 rounded-md"><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript">
+<span class="hljs-comment">// Define a variable</span>
+<span class="hljs-keyword">var</span> x = <span class="hljs-number">5</span>;
+                                                                        
+<span class="hljs-comment">// Perform a mathematical operation</span>
+<span class="hljs-keyword">var</span> result = x * <span class="hljs-number">2</span>;
+                                                                        
+<span class="hljs-comment">// Display the result</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"The result is: "</span> + result);
+                                </code></div></div></pre>
+                        </div>
+                    </div>
+                    <div class="h3-wrap">
+                        <span class="absolute-title"><a href="">Console</a></span>
+                        <button id="absolute-copy-button" class=" flex absolute-copy-button">
+                            <span id="copy-icon" class="material-symbols-outlined copy-icon">content_copy</span>
+                        </button>
+                        <div class="absolute-section">
+                            <pre><div class="dark bg-gray-950 rounded-md"><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript">
+<span class="hljs-comment">// Define a variable</span>
+<span class="hljs-keyword">var</span> x = <span class="hljs-number">5</span>;
+                                                                        
+<span class="hljs-comment">// Perform a mathematical operation</span>
+<span class="hljs-keyword">var</span> result = x * <span class="hljs-number">2</span>;
+                                                                        
+<span class="hljs-comment">// Display the result</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"The result is: "</span> + result);
+                                </code></div></div></pre>
+                        </div>
+                    </div>
+                    <div class="h3-wrap">
+                        <span class="absolute-title"><a href="">Console</a></span>
+                        <button id="absolute-copy-button" class=" flex absolute-copy-button">
+                            <span id="copy-icon" class="material-symbols-outlined copy-icon">content_copy</span>
+                        </button>
+                        <div class="absolute-section">
+                            <pre><div class="dark bg-gray-950 rounded-md"><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-javascript">
+<span class="hljs-comment">// Define a variable</span>
+<span class="hljs-keyword">var</span> x = <span class="hljs-number">5</span>;
+                                                                        
+<span class="hljs-comment">// Perform a mathematical operation</span>
+<span class="hljs-keyword">var</span> result = x * <span class="hljs-number">2</span>;
+                                                                        
+<span class="hljs-comment">// Display the result</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"The result is: "</span> + result);
+                                </code></div></div></pre>
+                        </div>
+                    </div>
+                </div> 
+            </section>
         </main>
-        
-    
 
-        <div class="space">hi</div>
-        
     </div> 
     
 

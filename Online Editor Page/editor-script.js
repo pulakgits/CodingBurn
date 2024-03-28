@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Save and Load
     var saveButton = document.getElementById("save-button");
     var loadButton = document.getElementById("load-button");
+    
 
     saveButton.addEventListener("click", function () {
         var code = editor.getValue();
@@ -92,14 +93,68 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     loadButton.addEventListener("click", function () {
-        var savedCode = localStorage.getItem("savedCode");
-        if (savedCode) {
-            editor.setValue(savedCode);
+        var loadCode = localStorage.getItem("savedCode");
+        if (loadCode) {
+            editor.setValue(loadCode);
             alert("Code loaded successfully");
         } else {
             alert("No saved code found");
         }
     });
+
+    // Copy Button Functionality
+    // copyButton variable
+    var copyButton = document.getElementById("copy-button");
+    copyButton.addEventListener("click", function(){
+        var code = editor.getValue();
+        copyToClipboard(code);
+        copyButton.innerHTML = "&#10004; Copied!";
+        setTimeout(function () {
+            copyButton.innerHTML = `<span class="material-symbols-outlined">
+            content_copy
+        </span>
+        Copy`;
+        }, 2000); // Change back to "Copy Code" after 2 seconds
+    });
+
+    // absolute copy button variable
+    function copyToClipboard(text) {
+        var textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+    }
+
+
+   // Get all elements with class "h3-wrap"
+   var h3WrapElements = document.querySelectorAll('.h3-wrap');
+
+   // Iterate over each "h3-wrap" element
+   h3WrapElements.forEach(function(h3WrapElement) {
+       // Get the copy button and copy icon within the current "h3-wrap" element
+       var absoluteCopyButton = h3WrapElement.querySelector('.absolute-copy-button');
+       var copyIcon = h3WrapElement.querySelector('.copy-icon');
+
+       // Attach click event listener to the copy button
+       absoluteCopyButton.addEventListener('click', function() {
+           // Find the code element within the current "h3-wrap" element
+           var codeElement = h3WrapElement.querySelector('.absolute-section code');
+           var range = document.createRange();
+           range.selectNode(codeElement);
+           window.getSelection().removeAllRanges();
+           window.getSelection().addRange(range);
+           document.execCommand('copy');
+           window.getSelection().removeAllRanges();
+           copyIcon.innerHTML = "&#10004;";
+           setTimeout(function () {
+               copyIcon.innerHTML = `<span class="material-symbols-outlined">
+                   content_copy
+               </span>`;
+           }, 2000); // Change back to "Copy Code" after 2 seconds
+       });
+   });
 
     // Themes and Customization
     var themeSelect = document.getElementById("theme-select");
@@ -157,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 {
-    const resizer = document.querySelector(".code-deitor-section-resizer-horizontal");
+    const resizer = document.querySelector(".output-area-right-resizer");
     const editorSection = document.querySelector(".code-editor-section");
     let isResizing = false;
     let startX, startWidth;
@@ -216,4 +271,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.removeEventListener("mousemove", handleMouseMoveVertical);
         document.removeEventListener("mouseup", handleMouseUpVertical);
     }
+
+
+
+
+
+
 }

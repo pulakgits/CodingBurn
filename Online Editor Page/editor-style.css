@@ -22,11 +22,11 @@ body{
    --mc1:#353537;
    --mc2:#acacae;
    --mc3: #0e1526;
-   --mc4:#0d141f;
-   --mc5:#07e092;
+   --mc4:#152136;
+   --mc5:#02af6f;
    --mc6:#152038;  
    --mc7:#50ff1f;
-   --inline-padding:10px 20px 10px 20px;
+   --inline-padding:10px 10px;
 }
 h1{
     font-size: 7rem;
@@ -64,35 +64,16 @@ i{
     align-items: center;
     margin-left: 5px;
 }
-section{
-    width: 100%;
-    /* background-color: red; */
-    color: var(--primary-text-color);
-    text-align: center;
-}
-.icon{
-    height: 20px;
-}
-.box{
-    width: 50%;
-    border: 1.5px solid var(--primary-text-color);
-    border-radius: 10px;
-}
-.box-area{
-    flex-direction: row;
-    /* background-color: red; */
-    padding-left: 10PX;
-    gap: 17px;
-}
+
 /* Utility Classes */
 .container{
-    max-width: 1180px;
-    padding: var(--inline-padding);
+    max-width: 1280px;
     margin-inline: auto;
+    padding: var(--inline-padding);
 }
 .flex{
     display: flex;
-    align-items: center;
+    align-items:flex-end;
 }
 .area-box{
     width: 50%;
@@ -108,7 +89,6 @@ section{
 }
 .btn{
     height: 30px;
-    width: 70px;
     font-size: 1rem;
     font-weight: 500;
     background-color: rgba(233, 30, 99, 1);
@@ -116,6 +96,7 @@ section{
     outline: 0;
     border-radius: 5px;
     color: #fff;
+    align-items: center;
 }
 .btn:hover{
     background-color: rgb(208, 18, 81);
@@ -163,16 +144,20 @@ section{
    -webkit-background-clip: text; */
    font-family: 'Poppins';
    font-weight: 500;
+   font-size: 18px;
+}
+.text-section{
+    width: 100%;
+    text-align: center;
 }
 .title{
-    font-size: 3.4rem;
+    font-size: 2.5rem;
     color: var(--primary-text-color);
     padding: 0;
     width: 100%;    
-    letter-spacing: .1rem;
+    letter-spacing: .07rem;
     font-weight: 700;
     text-align: center;
-    margin-top: -1.2rem;
 }
 
 /* ::-webkit-scrollbar {
@@ -190,7 +175,20 @@ section{
     color: var(--mc5);
     font-size: 2.4rem;
 }
-
+.icon{
+    height: 20px;
+}
+.box{
+    width: 50%;
+    border: 1.5px solid var(--primary-text-color);
+    border-radius: 10px;
+}
+.box-area{
+    flex-direction: row;
+    /* background-color: red; */
+    padding-left: 10PX;
+    gap: 17px;
+}
 /* Style for highlighted line */
 .CodeMirror-activeline-background {
     background-color: #f0f0f0; /* Adjust as needed */
@@ -204,13 +202,18 @@ section{
     background: #2846ed;
     color: #232301;
 }
+.most-imt-txt{
+    font-size: 2.4rem;
+    color: var(--mc5);
+}
 /* code editor section */
 .codingburn{
-    width: 100vw;
-    height: auto;
+    max-width: 100%;
+    max-height: auto;
+    box-sizing: content-box;
     flex-direction: column;
     justify-content: space-between;
-    gap: 50px;
+    gap: 10px;
     background-color:var(--mc3);
 }
 .codingburn .codingburn-header {
@@ -273,21 +276,25 @@ section{
     border-radius: 20px;    
     align-items: center;
 }
-.codingburn .codingburn-main {
+
+#main{
     width: 100%;
     flex-direction: column;
-    gap: 10px;
-    position: relative;
-    padding: 30px;  
+    gap: 20px;
+    /* background-color: red; */
 }
 
-.ads-section{
-    width: 100%;
-    height: auto;
-}
-.codingburn .codingburn-main .code-editor-section {
-    height: 470px;
+.codingburn .codingburn-main {
     width: 90%;
+    flex-direction: column;
+    /* background-color: wheat; */
+}
+
+.code-editor-section{
+    width: 93%;
+}
+.codingburn .codingburn-main .code-editor-box { 
+    height: 450px;
     background-color: #3c3c49;
     padding: 5px; /* Add padding */
     border-radius: 10px;
@@ -297,19 +304,27 @@ section{
     box-shadow: 0px 10px 15px -3px rgba(4, 63, 255, 0.1); /* Add 3D shadow effect */
 }
 .codingburn .codingburn-main 
-.code-editor-section .input-area{
-    height: 470px;
+.code-editor-box .input-area{
+    height: 100%;
     width: 70%;
 }
 .codingburn .codingburn-main 
-.code-editor-section .input-area .upper-area{
+.code-editor-box .input-area .upper-area{
     height: 14%;
+    align-items: center;
     justify-content: space-between;
     gap: 10px;
     padding-left: 49px;
 }
+
+.line2{
+    width: 50%;
+    justify-content: flex-end;
+    gap: 9px;
+}
+
 .codingburn .codingburn-main 
-.code-editor-section .input-area .lower-area{
+.code-editor-box .input-area .lower-area{
     height: 86%;
     /* background-color: #0556f3; */
 }
@@ -323,35 +338,38 @@ section{
     background-color:#3c3c49;
 }
 .codingburn .codingburn-main 
-.code-editor-section .output-area{
-    height: 470px;
+.code-editor-box .output-area{
+    height: 100%;
     width: 30%;
+    align-items: center;
     overflow: hidden;
 }
 .codingburn .codingburn-main 
-.code-editor-section .output-area .upper-area{
+.code-editor-box .output-area .upper-area{
     height: 14%;
+    align-items: center;
     justify-content: flex-end;
 }
 .codingburn .codingburn-main 
-.code-editor-section .output-area .lower-area{
+.code-editor-box .output-area .lower-area{
     height: 86%;
     background-color: #0e1526;
     color: #fff;
     overflow-y: scroll;
 }
 .codingburn .codingburn-main 
-.code-editor-section .output-area .lower-area
+.code-editor-box .output-area .lower-area
 .output, .out-heading{
    padding: 10px;
 }
 
 .input-output-area-resizer {
     width: 5px;
-    height: 65px;
-    cursor: ew-resize;
-    background: #a19f9f;
-    border-radius: 10px;
+    height: 100%;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==);
+    cursor: col-resize;
+    background-repeat: no-repeat;
+    background-position: 60%;
 }
 .code-deitor-section-resizer-horizontal{
     width: 5px;
@@ -373,16 +391,138 @@ section{
     border-radius: 10px;
 }
 
+/* section of codingburn */
 
-/* Section css code */
-
-
-
-
-/* space */
-.space{
-    height: 400px;
+.section{
     width: 100%;
-    background-color: rgb(0, 140, 255);
-    z-index: 4  ;
+    /* background-color: #0556f3; */
+    color: var(--primary-text-color);
+    padding: 30px 0 30px 0;
 }
+.section.section1{
+    background-color: var(--mc6);
+}
+.section .inside-section{
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Style for the container */
+.h3-wrap {
+    position: relative;
+    width: calc(45% - 20px);
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 9px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 1;
+    background-color: #1d1e20;
+}
+
+/* Style for the absolute title */
+.absolute-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: bold;
+    background-color: var(--mc5);
+    padding: 5px 20px;
+    border-radius: 0 9px;
+}
+.absolute-copy-button{
+    position: absolute;
+    top: 3.3rem;
+    right: 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 5px 2px 5px;
+    background-color: var(--mc5);
+    color: var(--primary-text-color);
+    border: none;
+    outline: none;
+    font-size: 200;
+}
+
+
+/* Initially hide the elements */
+#absolute-copy-button{
+    display: none;
+}
+
+/* Show the elements when hovering over .h3-wrap */
+.h3-wrap:hover #absolute-copy-button,
+.h3-wrap:hover #absolute-section {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Style for the code block */
+.absolute-section {
+    text-align: left;
+}
+
+/* Style for the code block */
+.code-block {
+    background-color: #212121;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Style for the pre tag */
+.absolute-section pre {
+    margin: 0;
+}
+
+/* Style for the code tag */
+.absolute-section code {
+    display: block;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    font-size: 17.6px;
+}
+
+/* Style for the comments */
+.hljs-comment {
+    color: #75715e;
+}
+
+/* Style for the keywords */
+.hljs-keyword {
+    color: #569CD6;
+}
+
+/* Style for the variables */
+.hljs-variable {
+    color: #9CDCFE;
+}
+
+/* Style for the strings */
+.hljs-string {
+    color: #CE9178;
+}
+
+/* Style for the functions */
+.hljs-title {
+    color: #dcdcaa;
+}
+
